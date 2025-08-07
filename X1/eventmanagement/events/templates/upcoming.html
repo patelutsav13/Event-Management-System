@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Upcoming Events</title>
+    </head>
+    {% extends 'base.html' %}
+    {% block content %}
+    <body>
+        <form method="get">
+            <h1>Upcoming Events</h1>
+            <input type="text" name="eventname">
+            <button type="submit">Search</button>
+        </form>
+        <table border="2px">
+            <tr>
+                <th>Event Name</th>
+                <th>Event Date</th>
+                <th>Location</th>
+                <th>Category</th>
+            </tr>
+
+            {% for e in events %}
+            <tr>
+                <td>{{e.eventname}}</td>
+                <td>{{e.eventdate}}</td>
+                <td>{{e.location}}</td>
+                <td>{{e.category}}</td>
+            </tr>
+
+            {% empty %}
+            <tr>
+                <th colspan="5">No Data Found</th>
+            </tr>
+        </table>
+        {% endfor %}
+        <p><a href="{% url 'view_events' %}">Events Categories</a></p>
+    </body>
+    {% endblock %}
+</html> 

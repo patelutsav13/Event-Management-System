@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Home Page</title>
+    </head>
+    <body>
+        {% extends 'base.html' %}
+        {% block content %}
+        <p><a href="{% url 'upcoming' %}">Upcoming Events</a></p>
+        <p><a href="{% url 'view_events' %}">Events Categories</a></p>
+        {% endblock %}
+    </body>
+</html>

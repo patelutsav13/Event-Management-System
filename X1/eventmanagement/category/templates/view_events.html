@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<html>
+  <head>
+    <title>View Events</title>
+  </head>
+  <body>
+    <h1>Event Categories</h1>
+    <ul>
+      {% for c in categories %}
+        <li>{{ c.categoryname }}</li>
+      {% empty %}
+        <li>No Data Found</li>
+      {% endfor %}
+    </ul>
+
+    <a href="{% url 'upcoming' %}">View Upcoming Events</a>
+  </body>
+</html>
+{% endblock %}
